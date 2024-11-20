@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Uvicorn Debugger (Base venv)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/venv/Scripts/python.exe",  // Ensure correct Python interpreter is used
+            "args": [
+                "-m", "uvicorn",  // Use `-m uvicorn` to run as a module
+                "app.main:app",   // Path to your ASGI app
+                "--reload"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": false,
+           
+            "preLaunchTask": "ensure-uvicorn-start"  // Make sure uvicorn starts properly
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

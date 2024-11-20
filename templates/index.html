@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Chat Assistant</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Upload Section -->
+        <div class="upload-section" id="uploadSection">
+            <h1>PDF Chat Assistant</h1>
+            <div class="upload-box" id="dropZone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & Drop your PDF here or</p>
+                <label for="fileInput" class="upload-btn">Choose File</label>
+                <input type="file" id="fileInput" accept=".pdf" hidden>
+            </div>
+            <div class="file-info" id="fileInfo" style="display: none;">
+                <p>Selected file: <span id="fileName"></span></p>
+                <button id="uploadBtn" class="primary-btn">Upload PDF</button>
+            </div>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="chat-section" id="chatSection" style="display: none;">
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message system">
+                        Hello! I'm ready to help you with your PDF. What would you like to know?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <textarea id="userInput" placeholder="Type your question here..." rows="1"></textarea>
+                    <button id="sendBtn" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Context Panel -->
+            <div class="context-panel" id="contextPanel">
+                <div class="panel-header">
+                    <h3>Related Content</h3>
+                    <button class="toggle-btn" id="togglePanel">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="panel-content">
+                    <div class="context-text" id="contextText"></div>
+                    <div class="context-images" id="contextImages"></div>
+                    <div class="context-tables" id="contextTables"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loader"></div>
+            <p id="loadingText">Processing PDF...</p>
+        </div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>
