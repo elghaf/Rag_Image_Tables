@@ -3,6 +3,8 @@ from fastapi import FastAPI, Request, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 
+
+
     
 from .utils.helpers import decode_base64_to_image, serialize_context
 from .services.pdf_processor import PDFProcessor
@@ -46,6 +48,8 @@ pdf_sessions = {}
 @app.get("/")
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+
 
 @app.post("/upload")
 async def upload_pdf(file: UploadFile = File(...)):
