@@ -4,8 +4,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 
 
-
-    
 from .utils.helpers import decode_base64_to_image, serialize_context
 from .services.pdf_processor import PDFProcessor
 from .services.chat_service import ChatService
