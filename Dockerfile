@@ -28,5 +28,6 @@ RUN mkdir -p /nltk_data && chmod -R 777 /nltk_data
 
 COPY . .
 
+## start the instance
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
 #CMD ["python", "main.py"]  # Assuming your main application file is named "main.py"
